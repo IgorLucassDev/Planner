@@ -1,20 +1,31 @@
 import styles from './Modal.module.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default ({setModalActive}) =>{
+export default ({setModalActive,tasks, setTasks}) =>{
 
     const [taskTitle, setTaskTitle] = useState('')
     const [taskDate, setTaskDate] = useState('')
 
+
+
+
     const submitForm = (e) =>{
         e.preventDefault()
-        const task = [{
+
+        const newTask = {
             title: taskTitle,
             date: taskDate
-        }]
+        }
 
-        console.log(task)
+        const updatedTasks = [...tasks, newTask]
+
+        setTasks(updatedTasks)
+
+        localStorage.setItem('tasks' ,JSON.stringify( updatedTasks))
+
+        console.log(tasks)
+
 
         setModalActive(false)
         

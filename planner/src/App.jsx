@@ -2,11 +2,22 @@ import './App.css'
 
 import Modal from './components/modal/Modal'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Task from './components/task/Task'
 
 export default () => {
 
   const [modalActive, setModalActive] = useState(false)
+
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+      // Carrega as tasks do localStorage quando o componente é montado
+      const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      setTasks(storedTasks);
+  }, []);
+
+
 
   const handleModalVisible = () =>{
     setModalActive(true)
@@ -25,8 +36,18 @@ export default () => {
           </div>
         </header>
         { modalActive &&
-          <Modal setModalActive={setModalActive}/>
+          <Modal tasks={tasks} setTasks={setTasks} setModalActive={setModalActive}/>
         }
+
+            <div className='taskContainer'>
+              {tasks.map((task, index) => (
+                  <Task
+                    key={index}
+                    title={task.title}
+                    date={task.date}
+                  />
+              ))}
+            </div>
       </div>
     </>
   )
