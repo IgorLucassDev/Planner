@@ -5,7 +5,7 @@
 
 ## Tecnologies
  * React
- * Flask
+ * UseState 
 
 ## Screenshots
 not available yet
