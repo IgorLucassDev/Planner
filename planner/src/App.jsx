@@ -1,7 +1,16 @@
 import './App.css'
+
 import Modal from './components/modal/Modal'
 
+import { useState } from 'react'
+
 export default () => {
+
+  const [modalActive, setModalActive] = useState(false)
+
+  const handleModalVisible = () =>{
+    setModalActive(true)
+  }
 
   return (
     <>
@@ -12,10 +21,12 @@ export default () => {
             <h2>Trabalhos</h2>
           </div>
           <div>
-            <button>Add</button>
+            <button onClick={setModalActive}>Add</button>
           </div>
         </header>
-        <Modal/>
+        { modalActive &&
+          <Modal setModalActive={setModalActive}/>
+        }
       </div>
     </>
   )
