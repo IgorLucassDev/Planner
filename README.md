@@ -9,3 +9,8 @@
 
 ## Screenshots
 not available yet
+
+## Run
+* `cd planner`
+* `npm install`
+* `npm run dev`
