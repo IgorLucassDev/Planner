@@ -1,6 +1,6 @@
 import styles from './Modal.module.css';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default ({setModalActive,tasks, setTasks}) =>{
 

@@ -8,3 +8,20 @@
     width: 450px;
     margin: 10px;
 }
+
+
+@media only screen and (max-width: 490px){
+    .Container{
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 365px){
+    .Container{
+        width: 250px;
+    }
+
+    .title,.date{
+        font-size: .8em;
+    }
+}
