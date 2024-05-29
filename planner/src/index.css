@@ -13,7 +13,7 @@
   color: #fff;
 }
 
-button{
+.addButton{
   padding: .8rem 2.2em;
   border: none;
   border-radius: 30px;
@@ -22,7 +22,7 @@ button{
   transition: linear 0.2s;
 }
 
-button:hover{
+.addButton:hover{
   transition: linear 0.2s;
   filter: drop-shadow(0 0 8px #ececec52);
 }

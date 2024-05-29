@@ -32,7 +32,7 @@ export default () => {
             <h2>Trabalhos</h2>
           </div>
           <div>
-            <button onClick={setModalActive}>Add</button>
+            <button className='addButton' onClick={setModalActive}>Add</button>
           </div>
         </header>
         { modalActive &&
