@@ -9,12 +9,9 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
+// Route components
 import Login from './routes/login/Login.jsx';
 import Account from './routes/account/Account.jsx';
-
-
-// tasks={tasks} setTasks={setTasks}
-
 
 
 const router = createBrowserRouter([

@@ -21,8 +21,8 @@ export default ({activeButton, setActiveButton, setModalActive}) =>{
                     <li>
                         <NavButton routeTo='/app' name='home' activeButton={activeButton} icon={HomeIcon} handle={() => setActiveButton('home')}/>
                     </li>
-                    <li>
-                        <NavButton name='add' icon={AddIcon} handle={() => setModalActive(true)}/>
+                    <li className={styles.add}>
+                        <NavButton className={styles.addButton} name='add' icon={AddIcon} handle={() => setModalActive(true)}/>
                     </li>
                     <li>
                         <NavButton routeTo='account' name='account' activeButton={activeButton} icon={AccountIcon} handle={() => setActiveButton('account')}/>

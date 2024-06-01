@@ -13,6 +13,14 @@
     gap: 1em;
 }
 
+.add{
+    display: none;
+}
+
+.addButton{
+    background-color: white;
+}
+
 @media only screen and (max-width: 700px){
     .Navbar{
         bottom: 10px;
@@ -22,8 +30,11 @@
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
     }
 
+    .add{
+        display: block;
+    }
     .navList{
-        gap: 2em;
+        gap: 2.5rem;
     }
     
 }
