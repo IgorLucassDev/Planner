@@ -1,0 +1,19 @@
+.NavButton{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #202020;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.NavButton > img{
+    width: 32px;
+}
+
+.active{
+    background-color: #3C3C3C;
+}

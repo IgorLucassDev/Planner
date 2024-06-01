@@ -8,8 +8,6 @@ export default ({setModalActive,tasks, setTasks}) =>{
     const [taskDate, setTaskDate] = useState('')
 
 
-
-
     const submitForm = (e) =>{
         e.preventDefault()
 

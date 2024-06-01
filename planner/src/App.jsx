@@ -1,27 +1,30 @@
 import './App.css'
 
 import Modal from './components/modal/Modal'
+import Navbar from './components/navbar/Navbar'
+import Task from './components/task/Task'
+
+import { Outlet } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
-import Task from './components/task/Task'
 
 export default () => {
 
-  const [modalActive, setModalActive] = useState(false)
-
   const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-      // Carrega as tasks do localStorage quando o componente é montado
-      const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      setTasks(storedTasks);
-  }, []);
-
-
+  const [modalActive, setModalActive] = useState(false)
 
   const handleModalVisible = () =>{
     setModalActive(true)
   }
+
+  useEffect(() => {
+    // Carrega as tasks do localStorage quando o componente é montado
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(storedTasks);
+  }, []);
+
+  const [activeButton, setActiveButton] = useState('home');
 
   return (
     <>
@@ -31,15 +34,20 @@ export default () => {
             <h1>Planner</h1>
             <h2>Trabalhos</h2>
           </div>
+          <Navbar activeButton={activeButton} setActiveButton={setActiveButton}/>
           <div>
-            <button className='addButton' onClick={setModalActive}>Add</button>
+            <button className='addButton' onClick={handleModalVisible}>Add</button>
           </div>
         </header>
         { modalActive &&
           <Modal tasks={tasks} setTasks={setTasks} setModalActive={setModalActive}/>
         }
 
-            <div className='taskContainer'>
+        <Outlet/>
+
+        { activeButton == 'home' ? 
+          
+          <div className='taskContainer'>
               {tasks.map((task, index) => (
                   <Task
                     key={index}
@@ -47,7 +55,10 @@ export default () => {
                     date={task.date}
                   />
               ))}
-            </div>
+        </div>
+         : []
+        }
+
       </div>
     </>
   )

@@ -20,11 +20,11 @@ export default () =>{
                     <form className={styles.loginBox}>
                             <label className={styles.formLabel} htmlFor="user">Usuario</label>
                         <div className={styles.formInputContainer}>
-                            <input className={styles.formInput} placeholder='Digite seu usuario' type="text" />
+                            <input className={styles.formInput} placeholder='Digite seu usuario' type="text" maxLength={50} required />
                         </div>
                             <label className={styles.formLabel} htmlFor="pass">Senha</label>
                         <div className={styles.formInputContainer}>
-                            <input placeholder='Digite sua senha' className={styles.formInput} type="password" name="pass" id="pass" />
+                            <input maxLength={30} required placeholder='Digite sua senha' className={styles.formInput} type="password" name="pass" id="pass" />
                         </div>
                         <div className={styles.socialLogin}>
                             <SocialButton logo={AppleLogo}/>
