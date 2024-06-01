@@ -4,10 +4,13 @@ import NavButton from './ui/NavButton';
 
 import AccountIcon from './icons/account_circle.png';
 import HomeIcon from './icons/home_app_logo.png'
+import AddIcon from "./icons/add_ad.png";
 
 import { useState } from 'react';
 
-export default ({activeButton, setActiveButton}) =>{
+export default ({activeButton, setActiveButton, setModalActive}) =>{
+
+    
 
     
 
@@ -17,6 +20,9 @@ export default ({activeButton, setActiveButton}) =>{
                 <ul className={styles.navList}>
                     <li>
                         <NavButton routeTo='/app' name='home' activeButton={activeButton} icon={HomeIcon} handle={() => setActiveButton('home')}/>
+                    </li>
+                    <li>
+                        <NavButton name='add' icon={AddIcon} handle={() => setModalActive(true)}/>
                     </li>
                     <li>
                         <NavButton routeTo='account' name='account' activeButton={activeButton} icon={AccountIcon} handle={() => setActiveButton('account')}/>

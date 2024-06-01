@@ -29,6 +29,27 @@ header{
   align-items: center;
 }
 
+.addButton{
+  padding: .8rem 2.2em;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: linear 0.2s;
+}
+
+.addButton:hover{
+  transition: linear 0.2s;
+  filter: drop-shadow(0 0 8px #ececec52);
+}
+
+
+@media only screen and (max-width: 700px){
+  .addButton{
+    display: none;
+  }
+}
+
 
 @media only screen and (max-width: 490px){
   .logo > h1{

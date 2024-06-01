@@ -12,3 +12,18 @@
     display: flex;
     gap: 1em;
 }
+
+@media only screen and (max-width: 700px){
+    .Navbar{
+        bottom: 10px;
+        background-color: #181818;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
+    }
+
+    .navList{
+        gap: 2em;
+    }
+    
+}

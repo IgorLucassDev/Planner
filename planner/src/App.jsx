@@ -34,7 +34,7 @@ export default () => {
             <h1>Planner</h1>
             <h2>Trabalhos</h2>
           </div>
-          <Navbar activeButton={activeButton} setActiveButton={setActiveButton}/>
+          <Navbar setModalActive={setModalActive} activeButton={activeButton} setActiveButton={setActiveButton}/>
           <div>
             <button className='addButton' onClick={handleModalVisible}>Add</button>
           </div>
